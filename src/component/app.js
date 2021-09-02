@@ -1,8 +1,6 @@
 import React ,{Component} from "react"
 import {connect} from "react-redux"
-import CreateQS from "./createQS"
 import { BrowserRouter as Router, Route ,Redirect, Switch, withRouter} from 'react-router-dom'
-import Nev from "./nev"
 import NevBar from "./nevBar"
 import User from "./user"
 import 'bootstrap/dist/css/bootstrap.min.css';

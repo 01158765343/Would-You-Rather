@@ -4,7 +4,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import LoadingBar from 'react-redux-loading-bar'
 import Aapp from "./component/app"
-import Api from "./component/api"
+
 class App extends Component {
 
   state={
