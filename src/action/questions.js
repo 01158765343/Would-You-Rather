@@ -1,4 +1,4 @@
-import { questionsDate } from "../reducer/type";
+import { questionsDate } from "./type";
 
 export function questions (date){
     

@@ -48,22 +48,24 @@ img {
 }
 .btn {
   display: block;
-  width: 20%;
-  justify-content: center;
-  align-items: center;
+
+  width: 100%;
+  background-color: rgba(0, 0, 255, 0.144);
+  /* justify-content: center; */
+  /* align-items: center; */
 
 }
 .select {
-  /* display: block; */
-  width: 20%;
-  /* justify-content: center; */
-  /* align-items: center; */
+  display: block;
+  /* width: 20%; */
+  justify-content: center;
+  align-items: center;
   margin-top: 90px;
   /* text-align: center; */
 }
-.cont{
+/* .cont{
   text-align: center;
-}
+} */
 .score {
   background-color: red;
   font-size:xx-large;
@@ -100,4 +102,17 @@ li {
   width: 60%;
   height: 4px;
   background-color: red;
+}
+.signin{
+  /* text-align: center; */
+  margin-top: 30px;
+}
+.conteniner{
+  display:grid;
+  justify-content: center;
+}
+button {
+  background-color:steelblue;
+
+
 }

@@ -2,7 +2,7 @@ import React ,{Component} from "react"
 import { connect } from "react-redux"
 import {addId} from "../action/user"
 
-class Privet extends Component{
+class signin extends Component{
 
     state ={
         id:null
@@ -20,8 +20,9 @@ class Privet extends Component{
         console.log(this.state.id)
         const {user }=this.props
         return (
-            <div>
-                <form className="cont" onSubmit={this.login}>
+            <div className="conteniner">
+                <h1 className="signin">sign in </h1>
+                <form className=" cont" onSubmit={this.login}>
                     
                     <select className="select" onClick={(e)=>this.setState({id:e.target.value}) } name="selct">
                         <option  default value="null"></option>
@@ -43,4 +44,4 @@ const mapStateToProps=({User})=>{
         user:User
     }
 }
-export default connect(mapStateToProps,{addId})(Privet)
+export default connect(mapStateToProps,{addId})(signin)

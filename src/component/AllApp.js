@@ -8,12 +8,12 @@ import Dashporder from "./dashporder"
 import Add from "./add"
 import QuestionAnswer from "./questionAnswer"
 import UnAnswers from "./unanswers"
-import Privet from "./privet"
-import ProtectedRoute from "./ProtectedRoute"
+import ProtectedRoute from "../ProtectedRoute"
 import Vote from "./vote"
 import  {_saveQuestionAnswer} from '../_DATA'
+import signin from "./signin"
 
-class Aapp extends Component{
+class AllApp extends Component{
 
 
     userQ=(e,id)=>{
@@ -28,7 +28,7 @@ class Aapp extends Component{
             <div>
                 
                     <NevBar />
-                    {/* <Switch> */}
+                    
                     <ProtectedRoute path="/dashporder" component={Dashporder} />
                     <ProtectedRoute path="/user" component={User} />
                     <ProtectedRoute path="/add" component={Add}  />
@@ -38,9 +38,9 @@ class Aapp extends Component{
                     <ProtectedRoute path="/dashporder/questionAnsers" render={()=>(
                         <QuestionAnswer id ={this.props.id} />
                     )} />
-                    <Route path="/login" component={Privet} />
+                    <Route path="/login" component={signin} />
                     <Redirect  to="/login" />
-                    {/* </Switch> */}
+                    
                     <ProtectedRoute  path='/dashporder/unanswers/:id' render={()=>(
                     <Vote id={this.props.qid}/>
                     )} />
@@ -65,4 +65,4 @@ function mapStateToProps(state ,props) {
         qid:state.AddVote.qid
     }
 }
-export default connect(mapStateToProps,null)(Aapp)
+export default connect(mapStateToProps,null)(AllApp)

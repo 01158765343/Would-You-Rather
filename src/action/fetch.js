@@ -1,4 +1,4 @@
-import {_getUsers , _getQuestions}from "../_DATA"
+import {_getUsers , _getQuestions }from "../_DATA"
 import {questions } from "./questions"
 import {user } from "./user"
 import { showLoading, hideLoading } from 'react-redux-loading-bar'

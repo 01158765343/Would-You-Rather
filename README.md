@@ -44,3 +44,4 @@ Simple game to add opinion
 And to interact with friends, I used React and Redux
 The user can add a question
 And the answer to the other questions And get points for it
+all date in file src/_DATA.js 

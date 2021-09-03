@@ -1,4 +1,4 @@
-import { Add_ID, ADD_VTOE, REMOV_ID, UserDate } from "../reducer/type";
+import { Add_ID, ADD_VTOE, REMOV_ID, UserDate } from "./type";
 
 
 export function user(date){

@@ -1,4 +1,4 @@
-import {UserDate ,questionsDate ,REMOV_ID,Add_ID} from "./type"
+import {UserDate ,questionsDate ,REMOV_ID,Add_ID} from "../action/type"
 import { combineReducers } from 'redux'
 import { loadingBarReducer } from 'react-redux-loading-bar'
 import {AddVote} from "./addVote"

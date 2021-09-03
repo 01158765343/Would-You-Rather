@@ -3,7 +3,7 @@ import { fetch } from './action/fetch';
 import './App.css';
 import { connect } from 'react-redux';
 import LoadingBar from 'react-redux-loading-bar'
-import Aapp from "./component/app"
+import AllApp from "./component/AllApp"
 
 class App extends Component {
 
@@ -26,7 +26,7 @@ class App extends Component {
         <LoadingBar />
         <div >
           
-          { this.props.rs > 0 ? <Aapp /> : <h1>lodeng...</h1> }
+          { this.props.rs > 0 ? <AllApp /> : <h1>lodeng...</h1> }
         </div>
       </Fragment>
          

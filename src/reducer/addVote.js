@@ -1,4 +1,4 @@
-import { ADD_VTOE } from "./type";
+import { ADD_VTOE } from "../action/type";
 
 export function AddVote (state={},action){
 
