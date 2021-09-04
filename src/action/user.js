@@ -1,4 +1,4 @@
-import { Add_ID, ADD_VTOE, REMOV_ID, UserDate } from "./type";
+import { Add_ID, ADD_VTOE, LOGIN, REMOV_ID, UserDate } from "./type";
 
 
 export function user(date){
@@ -27,5 +27,11 @@ export function Voteqid (qid){
     return {
         type:ADD_VTOE,
         qid
+    }
+}
+
+export function logg (){
+    return {
+        type:LOGIN
     }
 }

@@ -1,4 +1,4 @@
-import {UserDate ,questionsDate ,REMOV_ID,Add_ID} from "../action/type"
+import {UserDate ,questionsDate ,REMOV_ID,Add_ID, LOGIN} from "../action/type"
 import { combineReducers } from 'redux'
 import { loadingBarReducer } from 'react-redux-loading-bar'
 import {AddVote} from "./addVote"
@@ -33,17 +33,17 @@ function questions(state={}, action ){
     }
 
 }
-const intion ={
-    loggedIn:false,
-    id:""
-}
-function rootId (state=intion,action){
+
+function rootId (state={},action){
     switch(action.type){
         case Add_ID :
             let a ={...state}
-            a.loggedIn=true
             a.id=action.id
             return a
+        case  LOGIN :
+            let l={...state}
+            l.loggedIn=true
+            return l
 
         case REMOV_ID :
             let r = {...state}

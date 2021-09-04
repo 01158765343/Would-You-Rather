@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import  {_saveQuestionAnswer ,_getQuestions ,_getUsers} from '../_DATA'
 import {questions } from "../action/questions"
 import {user } from "../action/user"
+import { withRouter } from "react-router-dom"
 
 
 class Vote extends Component {
@@ -30,7 +31,7 @@ class Vote extends Component {
         .then((x)=>{
             this.props.questions(x)
         })
-        
+        this.props.history.push('/dashporder/questionAnsers')
     }
     render (){
         const {question , id}=this.props
@@ -66,4 +67,4 @@ function mapStateToProps({questions,rootId},{id}){
     }
 }
 
-export default connect(mapStateToProps ,{questions,user})(Vote)
+export default withRouter(connect(mapStateToProps ,{questions,user})(Vote))
