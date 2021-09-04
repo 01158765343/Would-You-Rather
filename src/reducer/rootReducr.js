@@ -39,6 +39,7 @@ function rootId (state={},action){
         case Add_ID :
             let a ={...state}
             a.id=action.id
+            a.loggedIn=true
             return a
         case  LOGIN :
             let l={...state}

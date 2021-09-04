@@ -10,16 +10,19 @@ class signin extends Component{
     }
     login=(e)=>{
         e.preventDefault()
-            // alert("plesa selact usar")
-            
+        if(this.state.id===null){
+            alert("plesa selact usar")
+        } else {
         console.log("ss",this.state.id)
         this.props.addId(this.state.id)
         this.props.history.push("/dashporder/unanswers")
+        }
         
     }
     changState =(e)=>{
         this.setState({id:e.target.value})
         console.log(this.state.id)
+        this.props.addId(this.state.id)
     }
     render (){
         console.log(this.state.id)
