@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import { _saveQuestion ,_getQuestions ,_getUsers }from "../_DATA"
 import {questions } from "../action/questions"
 import {user } from "../action/user"
+import { withRouter } from "react-router-dom"
 class Add extends Component {
 
     state={
@@ -30,6 +31,7 @@ class Add extends Component {
         .then((x)=>{
             this.props.questions(x)
         })
+        this.props.history.push(`/dashporder/unanswers`)
     }
     render (){
         return (
@@ -55,4 +57,4 @@ function mapStateToProps(state){
         author:state.rootId.id
     }
 }
-export default connect(mapStateToProps,{questions,user})(Add) 
+export default withRouter(connect(mapStateToProps,{questions,user})(Add)) 

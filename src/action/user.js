@@ -1,4 +1,4 @@
-import { Add_ID, ADD_VTOE, LOGIN, REMOV_ID, UserDate } from "./type";
+import { Add_ID, ADD_VTOE, REMOV_ID, UserDate ,ADD_LG } from "./type";
 
 
 export function user(date){
@@ -12,7 +12,7 @@ export function user(date){
 export function addId (id) {
     return {
         type :Add_ID,
-        id,
+        id
     }
 }
 export function removeId(id){
@@ -30,8 +30,9 @@ export function Voteqid (qid){
     }
 }
 
-export function logg (){
+
+export function loginA(){
     return {
-        type:LOGIN
+        type:ADD_LG
     }
 }

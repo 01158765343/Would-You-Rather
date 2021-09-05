@@ -31,7 +31,7 @@ class Vote extends Component {
         .then((x)=>{
             this.props.questions(x)
         })
-        this.props.history.push('/dashporder/questionAnsers')
+        this.props.history.push(`/dashporder/questionAnsers`)
     }
     render (){
         const {question , id}=this.props
@@ -39,7 +39,7 @@ class Vote extends Component {
         return (
             <div>
                 <h1>what do you rether ?</h1>
-                <form className="form" onChange={(e)=>{this.chang(e.target.value)}}  onSubmit={this.vote}>
+                {this.props.id&&<form className="form" onChange={(e)=>{this.chang(e.target.value)}}  onSubmit={this.vote}>
                     <div>
                     <label htmlFor="pO" >  {question[id].optionOne.text}</label>
                     <input type="radio"  name="option" id="pO" value="optionOne" />
@@ -51,7 +51,7 @@ class Vote extends Component {
                     </div>
                     <input type="submit" className="x" value="vote" />
                     
-                </form>
+                </form>}
             </div>
         )
     }

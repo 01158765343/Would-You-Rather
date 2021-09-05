@@ -11,14 +11,33 @@ import UnAnswers from "./unanswers"
 import ProtectedRoute from "../ProtectedRoute"
 import Vote from "./vote"
 import  {_saveQuestionAnswer} from '../_DATA'
-import signin from "./signin"
+import Signin from "./signin"
+import { addId ,loginA } from "../action/user"
 
 class AllApp extends Component{
 
-
+    state ={
+        id:""
+    }
     userQ=(e,id)=>{
         e.preventDefault()
         this.props.history.push(`/tweet/${id}`)
+    }
+    login=(e)=>{
+        e.preventDefault()
+        // if (this.state.id ===null){
+            // alert("plesa selact usar")
+            
+        // }else {
+        this.props.loginA()
+        this.props.history.push(`/dashporder/unanswers`)
+        // }
+    }
+    onupdeat=(e)=>{
+        console.log("e",e.target.value)
+        this.setState({id:e.target.value})
+        console.log("e",this.state.id)
+        this.props.addId(e.target.value)
     }
     render (){
         const {user}=this.props
@@ -38,7 +57,11 @@ class AllApp extends Component{
                     <ProtectedRoute path="/dashporder/questionAnsers" render={()=>(
                         <QuestionAnswer id ={this.props.id} />
                     )} />
-                    <Route path="/login" component={signin} />
+                    <Route path="/login"  render={()=>(
+                        <Signin
+                        onupdeat={this.onupdeat}
+                        login={this.login} />
+                    )} />
                     <Redirect  to="/login" />
                     
                     <ProtectedRoute  path='/dashporder/unanswers/:id' render={()=>(
@@ -62,7 +85,8 @@ function mapStateToProps(state ,props) {
     return {
         user : b  ,
         id:state.rootId.id,
-        qid:state.AddVote.qid
+        qid:state.rootId.qid,
+        
     }
 }
-export default connect(mapStateToProps,null)(AllApp)
+export default withRouter(connect(mapStateToProps,{addId ,loginA})(AllApp))

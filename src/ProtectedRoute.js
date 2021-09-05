@@ -11,7 +11,8 @@ const ProtectedRoute = ({
   render,
   loggedIn,
   id,
-  exact
+  exact,
+  login,
   
 }) => {
   return (
@@ -19,6 +20,7 @@ const ProtectedRoute = ({
       path={path}
       id={id}
       exact={exact}
+      login={login}
       render={(props) => {
         if (loggedIn ===true) {
           return Component ? <Component   /> : render(props)
